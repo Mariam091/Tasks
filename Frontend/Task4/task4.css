@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 10px;
+    background: #FFE7E7
+}
+
+
+.first input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.second input {
+    flex: 1;
+    margin-right: 10px;
+
+}
+
+
+input[type=button] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #ccc;
+  background-color: #9B4444;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+input[type=text] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #ccc;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+

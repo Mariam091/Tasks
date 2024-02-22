@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    transition: 0.3s ease;
+}
+div {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;  /* itemneri meji heravroutyun erb flex a */
+   height: 100vh;
+}
+button {
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 7px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+button:hover {
+    scale: 1.1;
+}
+.btn-1 {
+    background-color: #944E63;
+}
+.btn-2 {
+    background-color: #B47B84;
+}
+.btn-3 {
+    background: #CAA6A6;
+}

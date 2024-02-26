@@ -1,4 +1,4 @@
-const formId = "save-later-form";
+const formId = "save-form";
 const url = location.href;
 const formIdentifier = `${url} ${formId}`;
 const saveButton = document.querySelector("#save");

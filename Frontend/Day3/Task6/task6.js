@@ -1,0 +1,50 @@
+const products = [
+  { name: "Product 1", category: "home", tags: ["new"] },
+  { name: "Product 2", category: "apparel", tags: ["sale"] },
+  { name: "Product 3", category: "electronics", tags: ["eco-friendly", "new"] },
+  // Add more products as needed
+];
+
+// Function to render product listings based on filters
+function renderProductListings(categoryFilter, tagFilters) {
+  const productListings = document.getElementById("productListings");
+  productListings.innerHTML = ""; // Clear previous listings
+
+  const filteredProducts = products.filter(product => {
+    // Check if product matches category filter
+    const categoryMatch = categoryFilter === "all" || product.category === categoryFilter;
+
+    // Check if product matches all tag filters
+    const tagMatches = tagFilters.every(tag => product.tags.includes(tag));
+
+    return categoryMatch && tagMatches;
+  });
+
+  if (filteredProducts.length === 0) {
+    productListings.innerHTML = "<p>No products found.</p>";
+  } else {
+    filteredProducts.forEach(product => {
+      const productItem = document.createElement("div");
+      productItem.textContent = product.name;
+      productListings.appendChild(productItem);
+    });
+  }
+}
+
+// Event listeners for filter changes
+document.getElementById("category").addEventListener("change", function() {
+  const categoryFilter = this.value;
+  const tagFilters = Array.from(document.querySelectorAll("#tags input:checked")).map(input => input.value);
+  renderProductListings(categoryFilter, tagFilters);
+});
+
+document.querySelectorAll("#tags input").forEach(input => {
+  input.addEventListener("change", function() {
+    const categoryFilter = document.getElementById("category").value;
+    const tagFilters = Array.from(document.querySelectorAll("#tags input:checked")).map(input => input.value);
+    renderProductListings(categoryFilter, tagFilters);
+  });
+});
+
+// Initial rendering of product listings
+renderProductListings("all", []);

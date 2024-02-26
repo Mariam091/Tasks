@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Listings</title>
+  <link href="task6.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
 
+  <h2>Product Listings</h2>
+
+  <!-- Filter UI -->
+  <div class="filters">
+    <label for="category">Category:</label>
+    <select id="category">
+      <option value="all">All Categories</option>
+      <option value="home">Home</option>
+      <option value="apparel">Apparel</option>
+      <option value="electronics">Electronics</option>
+    </select>
+
+    <label for="tags">Tags:</label>
+    <div id="tags">
+      <label><input type="checkbox" value="eco-friendly"> Eco-friendly</label>
+      <label><input type="checkbox" value="new"> New</label>
+      <label><input type="checkbox" value="sale"> Sale</label>
+    </div>
+  </div>
+
+  <div id="productListings"></div>
+
+  <script src="task6.js"></script>
+</body>
+</html>
